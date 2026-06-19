@@ -27,18 +27,17 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
-            /* Subtle modern halftone/dot web pattern */
             background-image: radial-gradient(rgba(64, 123, 255, 0.15) 1.5px, transparent 1.5px);
             background-size: 24px 24px;
         }
 
         .card {
             background: #ffffff;
-            padding: 40px 30px;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02);
-            border: 3px solid var(--spidey-red);
-            max-width: 500px;
+            padding: 50px 40px;
+            border-radius: 28px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08), 0 2px 5px rgba(0, 0, 0, 0.03);
+            border: 4px solid var(--spidey-red);
+            max-width: 620px; /* Made the screen container bigger */
             width: 100%;
             text-align: center;
             position: relative;
@@ -47,17 +46,17 @@
 
         h1 {
             color: var(--spidey-red);
-            font-size: 2.4rem;
+            font-size: 2.8rem;
             font-weight: 800;
             letter-spacing: -0.5px;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
 
         .question {
-            font-size: 1.15rem;
+            font-size: 1.3rem;
             line-height: 1.6;
             color: #4a4a5a;
-            margin-bottom: 25px;
+            margin-bottom: 35px;
             font-weight: 500;
         }
 
@@ -66,44 +65,43 @@
             font-weight: 700;
         }
 
-        .gif-display {
+        .image-display {
             width: 100%;
-            height: 220px;
+            height: 280px; /* Taller image presentation box */
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 30px;
-            border-radius: 16px;
+            margin-bottom: 40px;
+            border-radius: 20px;
             overflow: hidden;
             background: #f8f9fa;
         }
 
-        .gif-display img {
-            max-height: 100%;
-            width: auto;
-            object-fit: contain;
+        .image-display img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
         }
 
-        /* Essential Fix: Stable Button Wrapper */
         .action-area {
             position: relative;
-            height: 120px;
+            height: 150px; /* Taller movement area for the button trick */
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
         }
 
         .btn {
-            padding: 14px 32px;
-            font-size: 1.1rem;
+            padding: 16px 36px;
+            font-size: 1.2rem;
             font-weight: 700;
             border: none;
             border-radius: 50px;
             cursor: pointer;
             transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
 
         #yesBtn {
@@ -120,28 +118,27 @@
         #noBtn {
             background-color: #eaeaea;
             color: #555565;
-            position: static; /* Starts static so it naturally sits next to Yes */
+            position: static;
         }
 
-        /* State Classes */
         .hidden {
             display: none !important;
         }
 
-        /* Minimalist Grid for Success Screen */
+        /* Clean Modern Grid for Success Screen Images */
         .grid-gallery {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-top: 20px;
+            gap: 16px;
+            margin-top: 25px;
         }
 
         .grid-gallery img {
             width: 100%;
-            height: 120px;
+            height: 160px;
             object-fit: cover;
-            border-radius: 12px;
-            border: 2px solid #eee;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
     </style>
 </head>
@@ -151,8 +148,8 @@
         <h1>Hey! 🕷️❤️</h1>
         <p class="question">I was wondering... would you want to go out and watch <span class="movie-title">Spider-Man: Brand New Day</span> with me?</p>
         
-        <div class="gif-display">
-            <img id="mainGif" src="https://media.giphy.com/media/SF9Z0shNT07T2/giphy.gif" alt="Spider-Man">
+        <div class="image-display">
+            <img id="mainGif" src="https://images.unsplash.com/photo-1635805737707-575885ab0820?auto=format&fit=crop&w=600&q=80" alt="Spider-Man Costume Close Up">
         </div>
 
         <div class="action-area">
@@ -165,13 +162,13 @@
         <h1>Let's GOOOO! 🕷️✨</h1>
         <p class="question">It's a date! Get ready for Spider-Man. 🍿</p>
         
-        <div class="gif-display">
-            <img src="https://media.giphy.com/media/b3m9xsO3JIY0M/giphy.gif" alt="Spiderman Dance">
+        <div class="image-display">
+            <img src="https://images.unsplash.com/photo-1608889174637-3c44f6326f20?auto=format&fit=crop&w=600&q=80" alt="Spider-Man Pop Art">
         </div>
 
         <div class="grid-gallery">
-            <img src="https://media.giphy.com/media/1qjCXhkDsxbHs4IxIs/giphy.gif" alt="Cute Spidey">
-            <img src="https://media.giphy.com/media/l36kU80xPf0ojG0Erg/giphy.gif" alt="Spiderman Pointing">
+            <img src="https://images.unsplash.com/photo-1534802046520-4f27db7f3ae5?auto=format&fit=crop&w=400&q=80" alt="Spider-Man City Landscape">
+            <img src="https://images.unsplash.com/photo-1620336655055-088d06e36bf0?auto=format&fit=crop&w=400&q=80" alt="Cute Marvel Set">
         </div>
     </div>
 
@@ -185,23 +182,24 @@
         let yesScale = 1;
         let noClicks = 0;
 
-        // Clean, iconic GIFs that match well
-        const sadSpideyGifs = [
-            "https://media.giphy.com/media/A7ZbCuv0fJBlC/giphy.gif", // Pleading Peter
-            "https://media.giphy.com/media/10hzvF9FTulLxK/giphy.gif", // Rain/Sad Spidey
-            "https://media.giphy.com/media/NWg7M1VlKvbO0/giphy.gif"  // Pleading hands
+        // Alternate emotional/cute pictures if they click no
+        const sadSpideyPics = [
+            "https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=600&q=80", // Rainy mood
+            "https://images.unsplash.com/photo-1559564484-e48b3e040ff4?auto=format&fit=crop&w=600&q=80", // Thoughtful silhouette
+            "https://images.unsplash.com/photo-1618336753974-aae8e04506aa?auto=format&fit=crop&w=600&q=80"  // Pleading Red art style
         ];
 
-        function escapeNoButton() {
+        function escapeNoButton(e) {
+            e.preventDefault(); // Prevents actual click behavior from refreshing or focusing
+            
             const actionArea = document.querySelector('.action-area');
             
-            // Switch to absolute positioning only AFTER the first interaction so it can start moving
+            // Switch to absolute positioning so it jumps around inside the action area box
             if (noBtn.style.position !== 'absolute') {
                 noBtn.style.position = 'absolute';
             }
 
-            // Keep the boundaries strictly inside the action area box
-            const padding = 10;
+            const padding = 15;
             const maxX = actionArea.clientWidth - noBtn.clientWidth - padding;
             const maxY = actionArea.clientHeight - noBtn.clientHeight - padding;
             
@@ -211,27 +209,21 @@
             noBtn.style.left = randomX + 'px';
             noBtn.style.top = randomY + 'px';
 
-            // Scale up the Sure button cleanly
-            yesScale += 0.3;
+            // Scale up the Sure button dynamically
+            yesScale += 0.35;
             yesBtn.style.transform = `scale(${yesScale})`;
 
-            // Rotate through GIFs smoothly
-            if (noClicks < sadSpideyGifs.length) {
-                mainGif.src = sadSpideyGifs[noClicks];
+            // Shift through alternate images
+            if (noClicks < sadSpideyPics.length) {
+                mainGif.src = sadSpideyPics[noClicks];
             }
             noClicks++;
         }
 
-        // Desktop interaction
-        noBtn.addEventListener('mouseenter', escapeNoButton);
-        
-        // Mobile tap safety interaction
-        noBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            escapeNoButton();
-        });
+        // Changed strictly to 'click' to handle touch screens and mouse clicks manually
+        noBtn.addEventListener('click', escapeNoButton);
 
-        // Date Accepted!
+        // Date Confirmation
         yesBtn.addEventListener('click', () => {
             inviteCard.classList.add('hidden');
             successCard.classList.remove('hidden');
