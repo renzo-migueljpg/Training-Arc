@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -131,3 +132,126 @@
 
 </body>
 </html>
+=======
+Special Question!  
+  
+body {  
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+background-color: #ffe6e6;  
+display: flex;  
+flex-direction: column;  
+align-items: center;  
+justify-content: center;  
+height: 100vh;  
+margin: 0;  
+overflow: hidden;  
+text-align: center;  
+}  
+.container {  
+background-color: white;  
+padding: 30px;  
+border-radius: 20px;  
+box-shadow: 0 10px 20px rgba(0,0,0,0.1);  
+max-width: 90%;  
+width: 400px;  
+z-index: 10;  
+}  
+h1 {  
+color: #cc0000;  
+font-size: 24px;  
+margin-bottom: 20px;  
+}  
+.gif-container img {  
+width: 100%;  
+max-width: 250px;  
+border-radius: 15px;  
+margin-bottom: 20px;  
+}  
+.btn-container {  
+display: flex;  
+justify-content: center;  
+align-items: center;  
+gap: 15px;  
+min-height: 150px;  
+position: relative;  
+}  
+button {  
+padding: 12px 25px;  
+font-size: 18px;  
+font-weight: bold;  
+border: none;  
+border-radius: 50px;  
+cursor: pointer;  
+transition: all 0.2s ease;  
+}  
+#yesBtn {  
+background-color: #ff4d4d;  
+color: white;  
+box-shadow: 0 5px 10px rgba(255, 77, 77, 0.4);  
+}  
+#noBtn {  
+background-color: #b3b3b3;  
+color: white;  
+}  
+  
+  
+
+  
+Will you watch Spider-Man: Brand New Day with me? 🕷️  
+  
+  
+  
+  
+Yes!  
+No  
+  
+
+  
+let yesSize = 18;  
+let paddingX = 25;  
+let paddingY = 12;  
+let clickCount = 0;
+
+// Cute Spider-Man gifs for each "No" click  
+const gifs = \[  
+"giphy.com", // Sad Spidey  
+"giphy.com", // Crying Spidey  
+"giphy.com", // Please Spidey  
+"giphy.com" // Shocked Spidey  
+\];
+
+const messages = \[  
+"Are you sure? 🥺",  
+"Think about it again... 🕸️",  
+"Spidey is getting sad... 💔",  
+"You really have no choice now! 😜"  
+\];
+
+function growYes() {  
+clickCount++;
+
+// Make Yes button bigger  
+yesSize += 25;  
+paddingX += 30;  
+paddingY += 15;
+
+const yesBtn = document.getElementById('yesBtn');  
+yesBtn.style.fontSize = yesSize + 'px';  
+yesBtn.style.padding = paddingY + 'px ' + paddingX + 'px';
+
+// Change Text and GIF based on click count  
+const index = Math.min(clickCount - 1, gifs.length - 1);  
+document.getElementById('gifImage').src = gifs\[index\];  
+document.getElementById('question').innerText = messages\[index\];
+
+// Hide the No button entirely if they try too many times  
+if (clickCount > 4) {  
+document.getElementById('noBtn').style.display = 'none';  
+}  
+}
+
+function celebrate() {  
+// Winning screen  
+document.getElementById('mainCard').innerHTML = `<h1>Yay! It's a date! 🕷️❤️</h1> <div class="gif-container"> <img src="https://giphy.com" alt="Spidey Dancing"> </div> <p style="font-weight:bold; color:#cc0000;">Get the popcorn ready!</p>`;  
+}
+>>>>>>> 345c8d35e2edf10ec7a9c63513bcc9c40a12c17f
