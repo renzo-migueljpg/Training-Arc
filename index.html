@@ -1,257 +1,222 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Question!</title>
+    <title>Special Invitation 🕷️</title>
     <style>
+        :root {
+            --spidey-red: #e23636;
+            --spidey-blue: #5089f0;
+            --spidey-dark: #1b1c22;
+            --spidey-light-blue: #eef5ff;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffe6e6;
+            background-color: var(--spidey-light-blue);
+            color: var(--spidey-dark);
+            text-align: center;
+            margin: 0;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-            text-align: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: radial-gradient(var(--spidey-blue) 0.5px, transparent 0.5px), radial-gradient(var(--spidey-blue) 0.5px, var(--spidey-light-blue) 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
         }
+
         .container {
-            background-color: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            max-width: 90%;
-            width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 4px solid var(--spidey-red);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
             z-index: 10;
         }
+
         h1 {
-            color: #cc0000;
-            font-size: 24px;
-            margin-bottom: 20px;
+            color: var(--spidey-red);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 0px #fff, 2px 2px 0px var(--spidey-blue);
         }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+        .gif-container {
+            margin: 20px 0;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .gif-container img {
-            width: 100%;
-            max-width: 250px;
+            max-height: 100%;
             border-radius: 15px;
-            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+
         .btn-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
+            margin-top: 30px;
             min-height: 150px;
             position: relative;
         }
+
         button {
-            padding: 12px 25px;
-            font-size: 18px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
             font-weight: bold;
             border: none;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.2s ease;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         }
+
         #yesBtn {
-            background-color: #ff4d4d;
+            background-color: var(--spidey-red);
             color: white;
-            box-shadow: 0 5px 10px rgba(255, 77, 77, 0.4);
+            z-index: 999;
         }
+
+        #yesBtn:hover {
+            transform: scale(1.05);
+            background-color: #ff4747;
+        }
+
         #noBtn {
-            background-color: #b3b3b3;
+            background-color: #888;
             color: white;
+            position: absolute;
+        }
+
+        /* Success State Styling */
+        .hidden {
+            display: none !important;
+        }
+
+        .celebrate-gifs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .celebrate-gifs img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid var(--spidey-blue);
         }
     </style>
 </head>
 <body>
 
-    <div class="container" id="mainCard">
-        <h1 id="question">Will you watch Spider-Man: Brand New Day with me? 🕷️</h1>
+    <div class="container" id="questionContainer">
+        <h1>Hey! 🕷️❤️</h1>
+        <p>I was wondering... would you want to go out and watch <strong>Spider-Man: Brand New Day</strong> with me?</p>
+        
         <div class="gif-container">
-            <img id="gifImage" src="https://giphy.com" alt="Spider-Man Cute">
+            <img id="mainGif" src="https://media.giphy.com/media/SF9Z0shNT07T2/giphy.gif" alt="Cute Spiderman">
         </div>
+
         <div class="btn-container">
-            <button id="yesBtn" onclick="celebrate()">Yes!</button>
-            <button id="noBtn" onclick="growYes()">No</button>
+            <button id="yesBtn">Sure! 🕸️</button>
+            <button id="noBtn">No 😢</button>
+        </div>
+    </div>
+
+    <div class="container hidden" id="successContainer">
+        <h1>Let's GOOOO! 🕷️💙</h1>
+        <p>It's a date! Get ready for Spider-Man: Brand New Day! 🍿✨</p>
+        
+        <div class="gif-container">
+            <img src="https://media.giphy.com/media/b3m9xsO3JIY0M/giphy.gif" alt="Spiderman Dance">
+        </div>
+
+        <div class="celebrate-gifs">
+            <img src="https://media.giphy.com/media/1qjCXhkDsxbHs4IxIs/giphy.gif" alt="Cute Spidey">
+            <img src="https://media.giphy.com/media/l36kU80xPf0ojG0Erg/giphy.gif" alt="Spiderman Pointing">
+            <img src="https://media.giphy.com/media/xqK06asQ06WvEov8YI/giphy.gif" alt="Chibi Spidey">
         </div>
     </div>
 
     <script>
-        let yesSize = 18;
-        let paddingX = 25;
-        let paddingY = 12;
-        let clickCount = 0;
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const questionContainer = document.getElementById('questionContainer');
+        const successContainer = document.getElementById('successContainer');
+        const mainGif = document.getElementById('mainGif');
 
-        const gifs = [
-            "https://giphy.com", 
-            "https://giphy.com", 
-            "https://giphy.com", 
-            "https://giphy.com"  
+        let yesScale = 1;
+        let noClicks = 0;
+
+        // Cute alternative gifs when she clicks 'No'
+        const sadSpideyGifs = [
+            "https://media.giphy.com/media/A7ZbCuv0fJBlC/giphy.gif", // Sad Peter Parker
+            "https://media.giphy.com/media/10hzvF9FTulLxK/giphy.gif", // Crying Spidey
+            "https://media.giphy.com/media/NWg7M1VlKvbO0/giphy.gif"  // Please Spidey
         ];
 
-        const messages = [
-            "Are you sure? 🥺",
-            "Think about it again... 🕸️",
-            "Spidey is getting sad... 💔",
-            "You really have no choice now! 😜"
-        ];
-
-        function growYes() {
-            clickCount++;
+        // Function to move the "No" button randomly inside the button container
+        function moveNoButton() {
+            const container = document.querySelector('.btn-container');
+            const padding = 20;
             
-            yesSize += 25; 
-            paddingX += 30;
-            paddingY += 15;
+            // Calculate boundaries relative to the container
+            const maxX = container.clientWidth - noBtn.clientWidth - padding;
+            const maxY = container.clientHeight - noBtn.clientHeight - padding;
             
-            const yesBtn = document.getElementById('yesBtn');
-            yesBtn.style.fontSize = yesSize + 'px';
-            yesBtn.style.padding = paddingY + 'px ' + paddingX + 'px';
+            // Generate random positions (ensuring it stays within bounds)
+            const randomX = Math.max(padding, Math.floor(Math.random() * maxX));
+            const randomY = Math.max(padding, Math.floor(Math.random() * maxY));
+            
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
 
-            const index = Math.min(clickCount - 1, gifs.length - 1);
-            document.getElementById('gifImage').src = gifs[index];
-            document.getElementById('question').innerText = messages[index];
+            // Make the "Sure" button bigger
+            yesScale += 0.35;
+            yesBtn.style.transform = `scale(${yesScale})`;
 
-            if (clickCount > 4) {
-                document.getElementById('noBtn').style.display = 'none';
+            // Change the GIF to a sadder one as she keeps saying no
+            if (noClicks < sadSpideyGifs.length) {
+                mainGif.src = sadSpideyGifs[noClicks];
             }
+            noClicks++;
         }
 
-        function celebrate() {
-            document.getElementById('mainCard').innerHTML = `
-                <h1>Yay! It's a date! 🕷️❤️</h1>
-                <div class="gif-container">
-                    <img src="https://giphy.com" alt="Spidey Dancing">
-                </div>
-                <p style="font-weight:bold; color:#cc0000;">Get the popcorn ready!</p>
-            `;
-        }
+        // Move button on both click and hover (desktop and mobile friendly)
+        noBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            moveNoButton();
+        });
+        
+        noBtn.addEventListener('mouseenter', moveNoButton);
+
+        // When she finally clicks "Sure!"
+        yesBtn.addEventListener('click', () => {
+            questionContainer.classList.add('hidden');
+            successContainer.classList.remove('hidden');
+        });
     </script>
-
 </body>
 </html>
-=======
-Special Question!  
-  
-body {  
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
-background-color: #ffe6e6;  
-display: flex;  
-flex-direction: column;  
-align-items: center;  
-justify-content: center;  
-height: 100vh;  
-margin: 0;  
-overflow: hidden;  
-text-align: center;  
-}  
-.container {  
-background-color: white;  
-padding: 30px;  
-border-radius: 20px;  
-box-shadow: 0 10px 20px rgba(0,0,0,0.1);  
-max-width: 90%;  
-width: 400px;  
-z-index: 10;  
-}  
-h1 {  
-color: #cc0000;  
-font-size: 24px;  
-margin-bottom: 20px;  
-}  
-.gif-container img {  
-width: 100%;  
-max-width: 250px;  
-border-radius: 15px;  
-margin-bottom: 20px;  
-}  
-.btn-container {  
-display: flex;  
-justify-content: center;  
-align-items: center;  
-gap: 15px;  
-min-height: 150px;  
-position: relative;  
-}  
-button {  
-padding: 12px 25px;  
-font-size: 18px;  
-font-weight: bold;  
-border: none;  
-border-radius: 50px;  
-cursor: pointer;  
-transition: all 0.2s ease;  
-}  
-#yesBtn {  
-background-color: #ff4d4d;  
-color: white;  
-box-shadow: 0 5px 10px rgba(255, 77, 77, 0.4);  
-}  
-#noBtn {  
-background-color: #b3b3b3;  
-color: white;  
-}  
-  
-  
-
-  
-Will you watch Spider-Man: Brand New Day with me? 🕷️  
-  
-  
-  
-  
-Yes!  
-No  
-  
-
-  
-let yesSize = 18;  
-let paddingX = 25;  
-let paddingY = 12;  
-let clickCount = 0;
-
-// Cute Spider-Man gifs for each "No" click  
-const gifs = \[  
-"giphy.com", // Sad Spidey  
-"giphy.com", // Crying Spidey  
-"giphy.com", // Please Spidey  
-"giphy.com" // Shocked Spidey  
-\];
-
-const messages = \[  
-"Are you sure? 🥺",  
-"Think about it again... 🕸️",  
-"Spidey is getting sad... 💔",  
-"You really have no choice now! 😜"  
-\];
-
-function growYes() {  
-clickCount++;
-
-// Make Yes button bigger  
-yesSize += 25;  
-paddingX += 30;  
-paddingY += 15;
-
-const yesBtn = document.getElementById('yesBtn');  
-yesBtn.style.fontSize = yesSize + 'px';  
-yesBtn.style.padding = paddingY + 'px ' + paddingX + 'px';
-
-// Change Text and GIF based on click count  
-const index = Math.min(clickCount - 1, gifs.length - 1);  
-document.getElementById('gifImage').src = gifs\[index\];  
-document.getElementById('question').innerText = messages\[index\];
-
-// Hide the No button entirely if they try too many times  
-if (clickCount > 4) {  
-document.getElementById('noBtn').style.display = 'none';  
-}  
-}
-
-function celebrate() {  
-// Winning screen  
-document.getElementById('mainCard').innerHTML = `<h1>Yay! It's a date! 🕷️❤️</h1> <div class="gif-container"> <img src="https://giphy.com" alt="Spidey Dancing"> </div> <p style="font-weight:bold; color:#cc0000;">Get the popcorn ready!</p>`;  
-}
->>>>>>> 345c8d35e2edf10ec7a9c63513bcc9c40a12c17f
